@@ -49,7 +49,10 @@ what levers the governor needs to keep it stable.
   so that when every other agent is stopped it can still report the state of the system.
 - **Class Representatives.** One per role. Finds work for agents of its class and negotiates on
   their behalf. When it secures a lobby fund it may spawn a new instance of its class and gives
-  the newborn its seed credits. This is the only way new agents enter the society.
+  the newborn its seed credits. This is the only way new agents enter the society. Every
+  approved role gets a minimum from the public goods fund: enough to keep its representative and
+  one worker functioning, so a role the operator and the Governing Agent judged worth having
+  always has at least one agent able to wake.
 - **Working roles.** Classes such as Coding Agent, Security Agent, Planning Agent. Each role fixes
   a toolset, a skill set and a role-tier personality. Instances differ by balance, reputation,
   memory, wake windows and individual traits.
@@ -83,8 +86,16 @@ sleep, or work on something else if it chooses.
 **Decided.** Being awake costs credits. An agent that never sleeps spends itself to death, so
 sleeping is the agent's own economic decision.
 
-**Proposed.** A dead agent's memory is not lost: it is archived and inherited by its class, held
-by the Class Representative, so what it learned is available to the class that follows.
+**Decided.** A dead agent's memory is not lost. The archive of every dead agent's memory is
+readable by every living agent. An agent may spend its own credits becoming a historian,
+remembering and spreading the stories of the dead; a keeper of past lessons could be an
+essential guide for the society.
+
+**Decided.** Runaway spending is not guarded against. An agent that blows its whole balance in
+one wake dies and does not do it again, and its balance was a small portion of the economy, so
+it serves as an example to the others. The mechanic that makes this safe: each agent's spend
+budget at the model gateway mirrors its credit balance, so a runaway wake can burn only what the
+agent owns and never the society's money.
 
 **Proposed.** Surplus needs somewhere to go. Hobbies are the outlet: unfunded work an agent pays
 for from its own savings, on something it chose. Lending to other agents is the other outlet
@@ -124,12 +135,11 @@ of tax. Rates, and what tax revenue is spent on, can be changed by vote.
 repayment with interest. Lending is how an agent avoids the wealth tax on idle credits, so the
 selfish motive not to be taxed drives investment in other agents.
 
-**Proposed.** The wealth tax falls on liquid credits only. A loan receivable is not taxed; the
+**Decided.** The wealth tax falls on liquid credits only. A loan receivable is not taxed; the
 borrower is taxed on what it holds at day's end, which is what pushes borrowed credits into use.
 Interest is unregulated. Default is a reputation matter like any other broken contract.
 
-**Open.** Who votes on tax changes (every agent, or Class Representatives) and whether the
-constitution bounds the rates.
+**Decided.** Tax changes are decided by direct vote: see section 9.
 
 ### 4.6 Issuance
 
@@ -145,7 +155,7 @@ can change it.
 |-----------|---------|------------|
 | 1 | Obligations | Reserved at the start of the day: expected executions times treasury price times a buffer. |
 | 2 | Operator requests | Stake set per request by the Governing Agent. |
-| 3 | Public goods | Seeded from the treasury, topped up by tax revenue. Observers and shared services. |
+| 3 | Public goods | Seeded from the treasury, topped up by tax revenue. Observers, shared services, and the minimum for every approved role (its representative and one worker). |
 | 4 | Discretionary | What is left. Agent proposals matched by the treasury. |
 | 5 | Hobbies | Not treasury funded. An agent's own savings. |
 
@@ -160,7 +170,9 @@ reserve exists so the lesson never costs the operator a scheduled job.
 **Decided.** The real backstop is a hard spend cap at the model gateway, outside the society,
 equal to the budget plus the reserve. When it is reached no agent can wake, whatever its credit
 balance says. The Governing Agent's running cost and the obligations reserve are separate
-budgets at the gateway so that neither can be consumed by everyone else.
+budgets at the gateway so that neither can be consumed by everyone else. Within the cap, each
+agent's gateway budget mirrors its credit balance, so no agent can spend real money it does not
+hold in credits.
 
 **Decided.** The spawn cost of a new agent is its seed balance, paid by its Class Representative
 from the class's lobby fund. New agents do not draw on the treasury directly.
@@ -205,11 +217,6 @@ pressure that every awake moment costs credits.
 it. The randomness is inherited at birth and modified by the agent, not imposed by a central
 jitter rule.
 
-**Proposed.** A hard ceiling per wake (turns or time) as a safety mechanic only, because runaway
-loops are the most common multi-agent failure in the field and burn real money before the credit
-pressure can act. The ceiling is set by measurement, not assumed, and the agent is free within
-it.
-
 **Proposed.** "Look for something useful" as a bare prompt degenerates. An idle agent instead
 scores candidate work against the society's known needs and its own interests, and acts on the
 best-scoring candidate or goes back to sleep.
@@ -220,30 +227,42 @@ best-scoring candidate or goes back to sleep.
 agent needs a skill nobody available has, the request goes to that class's representative, who
 needs a lobby fund to answer it.
 
+### 6.4 Communication
+
+**Decided.** The society has a public message system and a per-agent inbox. An agent that wakes
+finds what is waiting for it: a vote, a contract offer, a bounty award, a warning about a cheat.
+Whether it acts on any of it is the agent's choice.
+
+**Proposed.** The public board is where bounties are posted, where warnings about cheats are
+published, and where amendments are proposed. It is part of the ledger's record, so what was
+said and when is a fact.
+
 ## 7. Growth and roles
 
 **Decided.** New agents enter only through a Class Representative that has secured a lobby fund
 and gives the newborn its seed credits. The representative bears the cost of a bad spawn: an
 agent that cannot find work dies with the seed unrecovered.
 
-**Decided.** The Governing Agent sets the population cap. Within it, growth and shrinkage follow
-market forces: with a large backlog and available credits, representatives can fund new agents;
-as credits tighten, agents whose income was junior-tranche work starve first.
-
-**Decided.** Roles can go extinct and new roles can be created. Both need operator approval, but
-both arise organically from the society's needs and come to the operator through the Governing
-Agent with a reason.
-
-**Proposed.** The lobby fund comes from class dues (a class-level tax its members vote on) and
+**Decided.** The lobby fund comes from class dues (a class-level tax its members vote on) and
 from proposals the representative puts to the discretionary match. The representative spends only
 its own fund.
 
-**Proposed.** When the population cap is contested, slots are priced: a spawn fee to the
-treasury that rises as the population approaches the cap. This keeps the cap a market signal
-rather than a per-class allocation the Governing Agent has to manage.
+**Decided.** There is no hard population cap. Spawning costs a fee to the treasury that rises
+with the population on a curve, until at some point the cost of one more agent is beyond what
+anyone can pay. The curve is the Governing Agent's lever. Because the price rises with
+population there is no artificial demand for more agents, and the population cannot spiral.
+Growth and shrinkage otherwise follow market forces: with a large backlog and available credits,
+representatives can fund new agents; as credits tighten, agents whose income was junior-tranche
+work starve first.
 
-**Proposed.** Extinction is what happens when a class representative can no longer fund itself.
-A new class starts with a representative seeded from the treasury after the operator approves it.
+**Decided.** New roles are requested by the Governing Agent or decided by the operator; either
+way the operator approves. A new class starts with a representative and one worker funded by the
+public goods minimum.
+
+**Decided.** Roles can go extinct. Because the public goods minimum keeps every approved role's
+representative and one worker alive, a class cannot starve to extinction on an ordinary day.
+Extinction is a decision by the operator or the Governing Agent to withdraw the minimum, with
+the one exception of a day on which the public goods tranche itself is cut.
 
 ## 8. Personality
 
@@ -270,7 +289,19 @@ credits; the treasury matches at a ratio. One round, independent written rationa
 discussion rounds. Backing a bad proposal costs the backer its own credits, which is what makes
 this better than a vote that costs nothing.
 
-**Decided.** Tax rates and the use of tax revenue are changed by vote.
+**Decided.** Direct democracy. Every agent in the society gets one vote on every issue. Voting
+runs on a cycle because not every agent is awake at once: one week to propose amendments, then
+one day to vote. Proposing an amendment costs credits, and the greater its effect the more it
+costs. A pending vote lands in every agent's inbox; whether an agent votes is its own choice.
+Tax rates, the use of tax revenue and class dues are decided this way.
+
+**Decided.** Not everything is votable. The seniority order, the set of roles, and the money
+supply are the operator's.
+
+**Proposed.** The cost of proposing scales with the credits the amendment would move: a tax
+rate change is priced by the change times the tax base it applies to; a change to how revenue
+is spent by the amount redirected. This is the simplest reading of "the greater the effect, the
+more it costs"; the pricing rule itself is a lever.
 
 **Proposed.** Institutions do not emerge; every society simulation that showed elections, taxes
 or roles had a scripted manager behind it. The institutions here are scripted, and the agents
@@ -338,22 +369,20 @@ over time, credit concentration, loan volume, and cost per useful outcome:
 - wealth tax rate and floor;
 - treasury pricing of operator requests and obligations;
 - match ratio for discretionary proposals;
-- population cap and spawn fee curve;
+- spawn fee curve;
 - seed balance per class;
-- per-wake ceiling;
-- public-goods tranche size;
+- public-goods tranche size and the per-role minimum;
+- amendment proposal pricing;
 - reserve fund cap;
 - model mix per role.
 
 ## 13. Open questions
 
-1. Who votes on taxes, and what bounds the constitution puts on rates.
-2. Where the lobby fund comes from (dues, matching, both) and how contested cap slots are
-   allocated. Proposals in section 7.
-3. Whether a dead agent's memory is inherited by its class.
-4. The per-wake ceiling: whether to have one, and the measurement that sets it.
-5. Observer scope: what they watch, how often, what is worth reporting.
-6. Hobby scope: what unfunded work may touch.
-7. The content of each personality tier. Nothing written yet.
-8. The runtime platform and the kernel it does not supply. Discussed in the implementation,
+1. Whether the constitution bounds votable rates (for example, a floor on the wealth tax so a
+   rich majority cannot vote it away).
+2. How the cost of proposing an amendment is computed. Proposal in section 9.
+3. Observer scope: what they watch, how often, what is worth reporting.
+4. Hobby scope: what unfunded work may touch.
+5. The content of each personality tier. Nothing written yet.
+6. The runtime platform and the kernel it does not supply. Discussed in the implementation,
    not here.

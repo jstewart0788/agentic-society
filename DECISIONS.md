@@ -80,6 +80,27 @@ Reason: taxes are visible, votable and fund the treasury; decay is none of those
 funded.** Reason: the Governing Agent must be able to report the state of the system even when
 every other agent is stopped, so its running cost is the operator's, outside the treasury.
 
+**Lobby funds come from class dues and matched proposals; every approved role gets a public
+goods minimum.** Enough to keep the representative and one worker alive. Reason: a role the
+operator and governor judged worth having must always have one agent able to wake. Consequence:
+extinction becomes a decision to withdraw the minimum, not starvation.
+
+**No hard population cap; a spawn fee curve instead.** The fee rises with population until one
+more agent is unaffordable. Reason: a cap is an allocation someone has to manage; a rising price
+removes artificial demand and stops the population spiralling with no one deciding.
+
+**Direct democracy on a weekly cycle.** One agent, one vote, on every issue; one week to propose
+amendments, one day to vote; proposing costs credits scaled by effect; votes arrive in an inbox
+and voting is optional. Reason: agents are not all awake at once, so a cycle is needed; pricing
+proposals stops noise.
+
+**Dead agents' memories are public.** Any agent may become a historian with its own credits.
+Reason: a keeper of past lessons could be an essential guide for the society.
+
+**No per-wake ceiling.** An agent that spends itself to death in one wake is natural selection
+and an example to the others. The mechanic that makes this safe: per-agent gateway budgets
+mirror credit balances, so a runaway wake can burn only what the agent owns.
+
 **Model-agnostic by design.** Different roles may run on different vendors' models. Reason: the
 operator does not want to be locked into one company's models and wants to experiment with
 model per role. Consequence: no single-vendor managed-agent platform can be the spine, and
