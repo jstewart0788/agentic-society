@@ -122,6 +122,14 @@ surplus should feed the society's own backlog, not arbitrary building.
 **Scoped message boards.** World, class, personal contacts, plus an inbox; agents may upgrade
 the boards as work. Reason: organising needs a place, and the society should own its own tools.
 
+**Traits are numbers the kernel honours; representatives bias newborns with a point budget.**
+Each point moves a trait's bound by one; 10 to 20 of 60 points to start, the budget a lever.
+Reason: persona prose decays within tens of turns, numbers do not; a representative that has
+read the archives should be able to steer the next generation without removing the chaos.
+
+**Agent state comes from the memory service and logs, not only self-report.** Reason: an agent
+that says it is fine and is three days from broke is the signal observers exist to catch.
+
 **Model-agnostic by design.** Different roles may run on different vendors' models. Reason: the
 operator does not want to be locked into one company's models and wants to experiment with
 model per role. Consequence: no single-vendor managed-agent platform can be the spine, and

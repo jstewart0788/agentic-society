@@ -285,9 +285,42 @@ memories from its own experience, and its individual personality. It cannot edit
 part: role memories, core memories, core mechanics. In tier terms, tier 3 is the agent's to
 change; tiers 1 and 2 are not.
 
+**Decided.** Tier 3 traits are numbers the kernel honours, not sentences the model is asked to
+remember. Each trait is on a 0 to 10 scale and drives one economic decision; the prompt
+describes the number. Drift is then behaviour measured against the number.
+
+**Proposed.** Six axes, 60 points in total:
+
+| Trait | Decision it drives |
+|-------|--------------------|
+| Thrift | Savings target; the balance at which the agent judges its day done and sleeps |
+| Risk appetite | Bid margin; willingness to accept payment after completion |
+| Sociability | How much it recruits, lends and posts to the boards |
+| Curiosity | Share of surplus spent on hobbies |
+| Trust | Which reputations it will contract with; how quickly it warns others |
+| Persistence | How many wakes it gives a stuck job before dropping it |
+
+**Decided.** Newborn traits are random within bounds the Class Representative can shape. The
+representative has a budget of points; each point moves the maximum or minimum of one trait up
+or down by one. The size of the budget is a lever, somewhere between 10 and 20 of the 60 points
+to begin with. The rest stays random.
+
+**Decided.** The society tier is short. It is in every prompt of every agent on every wake, so
+it carries the constitution's values in a dozen lines, not a manifesto.
+
+**Decided.** Memory mirrors the tiers. Core memories are society-wide and immutable. Role
+memories are class-wide, immutable to the individual, and include the inherited archives.
+Personal memories are the agent's own.
+
+**Decided.** An agent's state (confused, struggling, thriving) is derived from the memory
+service's automatic extraction and the run logs, extended where needed, not only from what the
+agent reports about itself. Observers compare that state to the ledger.
+
+**Proposed.** Because tier 3 is editable by the agent, drift has two readings: behaviour against
+the current file, and how far the current file has moved from birth. Both are observer signals.
+
 **Proposed.** Traits are composed from text fragments in stable-to-volatile order so the shared
-prefix is cacheable across wakes. Persona prompts are known to decay within tens of turns, so
-Observer Agents measure drift against the agent's current declared file and report it.
+prefix is cacheable across wakes.
 
 ## 9. Governance
 
@@ -397,6 +430,6 @@ over time, credit concentration, loan volume, and cost per useful outcome:
 ## 13. Open questions
 
 1. The constitutional bounds on each votable rate. Values come from simulation.
-2. The content of each personality tier, and the trait space for tier 3. See section 8.
+2. The content of tiers 1 and 2, and whether the six proposed axes are the right six.
 3. The runtime platform and the kernel it does not supply. Discussed in the implementation,
    not here.
