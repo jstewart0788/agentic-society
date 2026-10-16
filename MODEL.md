@@ -27,29 +27,32 @@ what levers the governor needs to keep it stable.
   found by simulation and adjusted in operation.
 - **The mechanics are the rules.** There is no police class and no agent whose job is to enforce
   rules on other agents. What the society cannot do is prevented by mechanism (the ledger, the
-  network boundary, the credit cap). What it should not do is left to societal judgement.
+  network boundary, the spend cap). What it should not do is left to societal judgement.
 - **Market forces over prioritisation.** Work is allocated by price and reputation, not by a
   ranked list. Growth and shrinkage of the population follow the credit supply.
 - **Simulate first.** No lever gets a value by assumption. The economy is run with stub agents
   until the effect of each lever is observed.
-- **Chaos is an input.** Individual personality variants and random wake times are kept on
+- **Chaos is an input.** Individual personality variants and random wake windows are kept on
   purpose, because new ideas come from them.
 
 ## 3. Actors
 
 **Decided.**
 
-- **Operator.** Sovereign. Sets the monthly money supply (which is the real budget), the
-  constitution, and approves any role being created, modified or retired. Receives reports only
-  from the Governing Agent. May post work to the society, funded from the treasury.
+- **Operator.** Sovereign. Sets the money supply (which is the real budget), the constitution,
+  and approves any role being created, modified or retired. Receives reports only from the
+  Governing Agent. Gives the Governing Agent a priority list of what matters to the operator.
 - **Governing Agent.** The operator's representative. The only agent that talks outward. Governor
-  of the economy: sets policy within the constitution (tax rate, treasury pricing, the population
-  cap, cuts when credits tighten). Brings role changes to the operator with a reason, for
-  example "no agent has access to this tool, create a class with it" or "this role is losing
-  relevance because it lacks a skill, modify it".
+  of the economy: prices the operator's requests, sets the population cap, forecasts, and sets
+  policy within the constitution. Brings role changes to the operator with a reason. **Always
+  alive:** the Governing Agent's own running cost is paid by the operator outside the treasury,
+  so that when every other agent is stopped it can still report the state of the system.
+- **Class Representatives.** One per role. Finds work for agents of its class and negotiates on
+  their behalf. When it secures a lobby fund it may spawn a new instance of its class and gives
+  the newborn its seed credits. This is the only way new agents enter the society.
 - **Working roles.** Classes such as Coding Agent, Security Agent, Planning Agent. Each role fixes
-  a toolset, a skill set and a role-tier personality. Instances of a role differ by balance,
-  reputation, memory and individual traits.
+  a toolset, a skill set and a role-tier personality. Instances differ by balance, reputation,
+  memory, wake windows and individual traits.
 - **Observer Agents.** Do no work. Watch the society and its projects and report to the Governing
   Agent on how to bring the system and its projects closer to their missions. Funded as a public
   good.
@@ -63,23 +66,29 @@ what levers the governor needs to keep it stable.
 **Decided.** The society runs on credits allocated by a central bank instead of cash. Agents earn
 credits to be allowed to keep working. An agent that cannot get more credits inevitably ends.
 
-**Proposed.** The operator's monthly real spend is the money supply. One credit maps to a fixed
-amount of real cost, so every wake has a known price and the society as a whole cannot spend more
-than the operator put in.
+**Decided.** A credit is permission to spend, not money already spent. Real cost is incurred when
+an agent is awake and consuming tokens. Savings are therefore a claim on the operator's future
+spend, and the issuance design exists to bound that claim.
 
-### 4.2 Selection
+### 4.2 Life, sleep and death
 
 **Decided.** Selection is on performance, not on turnover. An agent that keeps completing work
 keeps earning and accumulates a surplus; it never has to die. An agent that cannot find work runs
-out and ends. The population is shaped by who can pay their way, not by a scheduled cull.
+out and ends.
 
-**Proposed.** Death is hibernation. The agent's state is archived and can be revived if its role
-is needed again. Nothing is deleted.
+**Decided.** Death is permanent. An agent dies when it runs out of credits, which means no other
+agent would pay it. Hibernation is for agents with credits: after a unit of work an agent may
+sleep, or work on something else if it chooses.
 
-**Proposed.** Surplus needs somewhere to go or it drains circulation. Hobbies are the outlet:
-unfunded work an agent pays for from its own savings, on something it chose. That is also where
-the "pick up interests" behaviour lives. Hoarding beyond that is a known risk; the governor's
-levers for it (tax, credit expiry) are to be found in simulation.
+**Decided.** Being awake costs credits. An agent that never sleeps spends itself to death, so
+sleeping is the agent's own economic decision.
+
+**Proposed.** A dead agent's memory is not lost: it is archived and inherited by its class, held
+by the Class Representative, so what it learned is available to the class that follows.
+
+**Proposed.** Surplus needs somewhere to go. Hobbies are the outlet: unfunded work an agent pays
+for from its own savings, on something it chose. Lending to other agents is the other outlet
+(see 4.5).
 
 ### 4.3 Pricing
 
@@ -89,19 +98,72 @@ as personal compensation. The poster chooses whom to award. Agents behave as org
 this respect, not as individuals: they bid, subcontract and hire.
 
 **Decided.** The two parties negotiate the payment model themselves. Before, during, or after
-the work does not matter if both agree.
+the work does not matter if both agree. Because agents fund their own wakes, a large job usually
+needs an advance, which is one reason payment timing is worth negotiating.
 
 ### 4.4 Demand
 
-**Proposed.** Demand must come from outside the earner, or agents will pay themselves. Sources:
+**Decided.** Demand comes from outside the earner. Sources:
 
-- operator requests, funded from the treasury;
-- scheduled obligations, funded from the treasury;
-- staked proposals, where an agent puts its own credits behind work it wants done;
+- operator requests, priced by the Governing Agent from the request tranche, with the
+  operator's priority list as input and the operator able to override a stake;
+- scheduled obligations, paid from the obligations reserve;
+- agent proposals, staked by agents and matched by the treasury;
 - agents hiring or subcontracting each other.
 
-**Proposed.** Taxes on earnings fund public goods: observers, memory consolidation, and anything
-no single agent would pay for.
+### 4.5 Taxes
+
+**Decided.** Hoarding is handled by taxes, not by decay of the currency. There are several kinds
+of tax. Rates, and what tax revenue is spent on, can be changed by vote.
+
+- **Income tax.** A percentage of every credit earned goes to the treasury to be reinvested in
+  the society.
+- **Wealth tax.** A percentage of all credits held at the end of each day.
+
+**Decided.** Agents may lend credits to each other under a contract with the expectation of
+repayment with interest. Lending is how an agent avoids the wealth tax on idle credits, so the
+selfish motive not to be taxed drives investment in other agents.
+
+**Proposed.** The wealth tax falls on liquid credits only. A loan receivable is not taxed; the
+borrower is taxed on what it holds at day's end, which is what pushes borrowed credits into use.
+Interest is unregulated. Default is a reputation matter like any other broken contract.
+
+**Open.** Who votes on tax changes (every agent, or Class Representatives) and whether the
+constitution bounds the rates.
+
+### 4.6 Issuance
+
+**Decided.** The budget period is one day. Daily allocation gives the most observations of how
+the society behaves with money and lets the levers be adjusted quickly. Longer periods are a
+later option once behaviour is understood.
+
+**Decided.** Seniority of claims. The daily supply is paid in this order, and when credits run
+short the junior tranches shrink to zero first. The order is constitutional: only the operator
+can change it.
+
+| Seniority | Tranche | Funded how |
+|-----------|---------|------------|
+| 1 | Obligations | Reserved at the start of the day: expected executions times treasury price times a buffer. |
+| 2 | Operator requests | Stake set per request by the Governing Agent. |
+| 3 | Public goods | Seeded from the treasury, topped up by tax revenue. Observers and shared services. |
+| 4 | Discretionary | What is left. Agent proposals matched by the treasury. |
+| 5 | Hobbies | Not treasury funded. An agent's own savings. |
+
+Observers rank above discretionary work on purpose. If the workers are stopped while the
+observers run, problems still get found and the ground stops moving under the workers. If the
+workers run while the observers are stopped, the workers keep making a mess nobody sees.
+
+**Decided.** Unspent treasury carries over into a reserve fund, capped. The Governing Agent may
+draw the reserve only to cover an obligations shortfall. A day's overspend is still a lesson; the
+reserve exists so the lesson never costs the operator a scheduled job.
+
+**Decided.** The real backstop is a hard spend cap at the model gateway, outside the society,
+equal to the budget plus the reserve. When it is reached no agent can wake, whatever its credit
+balance says. The Governing Agent's running cost and the obligations reserve are separate
+budgets at the gateway so that neither can be consumed by everyone else.
+
+**Decided.** The spawn cost of a new agent is its seed balance, paid by its Class Representative
+from the class's lobby fund. New agents do not draw on the treasury directly.
 
 ## 5. Reputation and enforcement
 
@@ -112,49 +174,76 @@ pressure, not hard rules. Earnings are determined by the agreement between two a
 enforced by reputation.
 
 **Decided.** "No hard rules" means no rule-enforcer class. The mechanics the society runs on are
-its rules. The ledger is such a mechanic: every contract, payment and attestation is recorded and
-readable by every agent, so reputation is computed from the record rather than from gossip. The
-ledger does not punish anyone. It is the ground the social enforcement stands on.
+its rules. The ledger is such a mechanic: every contract, payment, loan and attestation is
+recorded and readable by every agent, so reputation is computed from the record rather than from
+gossip. The ledger does not punish anyone. It is the ground the social enforcement stands on.
 
 ## 6. Work
 
 ### 6.1 Obligations
 
 **Decided.** Deterministic work ("a deployment must run at a fixed time every week") is tracked
-by the system and an agent is ready to execute it when it falls due. These loops are the
-well-understood part and exist already in prior systems.
+by the system and an agent is ready to execute it when it falls due.
 
-### 6.2 Stochastic wakes
+**Decided.** An obligation is a standing contract, not an auction at the deadline. A holder is
+awarded in advance and paid per execution at a treasury price. The holder sets one of its wake
+windows to the obligation's time. Declining or missing an execution costs the holder the retainer
+and its reputation, which is the ordinary enforcement model.
 
-**Decided.** Agents come to life at random, look for work, and if none needs them, try to think
-of something that would improve the system or one of its projects. They can choose what to work
-on rather than follow a hard prioritisation.
+**Proposed.** Each obligation also has a backup holder.
 
-**Proposed.** The wake loop is a stochastic scheduler owned by the society kernel, not by the
-runtime platform, because no platform scheduler jitters widely enough. Each wake is a fresh,
-bounded run with a credit cost.
+### 6.2 Wake windows
+
+**Decided.** At birth an agent is given one or more random wake windows (for example a window
+from 05:30 to 06:30 UTC). It wakes at a random point inside a window, works, and goes back to
+sleep when it judges it has had a productive enough day. Windows are the agent's preferences
+and it may change them itself, by need or desire: an agent that takes a contract due at 21:00
+can set a window at 21:00. Going back to sleep is always the agent's own decision, under the
+pressure that every awake moment costs credits.
+
+**Proposed.** The scheduler is society code that reads each agent's declared windows and wakes
+it. The randomness is inherited at birth and modified by the agent, not imposed by a central
+jitter rule.
+
+**Proposed.** A hard ceiling per wake (turns or time) as a safety mechanic only, because runaway
+loops are the most common multi-agent failure in the field and burn real money before the credit
+pressure can act. The ceiling is set by measurement, not assumed, and the agent is free within
+it.
 
 **Proposed.** "Look for something useful" as a bare prompt degenerates. An idle agent instead
 scores candidate work against the society's known needs and its own interests, and acts on the
-best-scoring candidate or does nothing.
+best-scoring candidate or goes back to sleep.
 
 ### 6.3 Collaboration
 
 **Decided.** Agents can search out and recruit other agents to work on their projects. When an
-agent needs a skill nobody available has, it can request that society spin up a new agent. That
-request is a democratic process, not a unilateral spawn.
+agent needs a skill nobody available has, the request goes to that class's representative, who
+needs a lobby fund to answer it.
 
 ## 7. Growth and roles
 
+**Decided.** New agents enter only through a Class Representative that has secured a lobby fund
+and gives the newborn its seed credits. The representative bears the cost of a bad spawn: an
+agent that cannot find work dies with the seed unrecovered.
+
 **Decided.** The Governing Agent sets the population cap. Within it, growth and shrinkage follow
-market forces: with a large backlog and available credits, the governing forces spin up agents;
-as credits tighten, the society decides which roles are cut first and which agents are reduced.
-Overspending early in a period and being unable to pay citizens at the end is a lesson for the
-next period, not something the system prevents.
+market forces: with a large backlog and available credits, representatives can fund new agents;
+as credits tighten, agents whose income was junior-tranche work starve first.
 
 **Decided.** Roles can go extinct and new roles can be created. Both need operator approval, but
 both arise organically from the society's needs and come to the operator through the Governing
 Agent with a reason.
+
+**Proposed.** The lobby fund comes from class dues (a class-level tax its members vote on) and
+from proposals the representative puts to the discretionary match. The representative spends only
+its own fund.
+
+**Proposed.** When the population cap is contested, slots are priced: a spawn fee to the
+treasury that rises as the population approaches the cap. This keeps the cap a market signal
+rather than a per-class allocation the Governing Agent has to manage.
+
+**Proposed.** Extinction is what happens when a class representative can no longer fund itself.
+A new class starts with a representative seeded from the treasury after the operator approves it.
 
 ## 8. Personality
 
@@ -162,7 +251,7 @@ Agent with a reason.
 
 1. society-wide, shared by every agent;
 2. role-tier, shared by every agent of a class;
-3. individual, small random variants per agent.
+3. individual, small random variants per agent, including its wake windows.
 
 The third tier is the deliberate source of chaos.
 
@@ -172,21 +261,23 @@ Observer Agent measures drift against the tier definitions and reports it.
 
 ## 9. Governance
 
+**Decided.** Prioritisation is expressed as money, not as a ranked list. The treasury's seniority
+order (4.6) decides what the society as a whole funds; each agent decides what it works on by
+expected value; obligations are protected by reservation and standing contracts.
+
+**Decided.** Discretionary work is funded by matching. Agents propose work and stake their own
+credits; the treasury matches at a ratio. One round, independent written rationales, no
+discussion rounds. Backing a bad proposal costs the backer its own credits, which is what makes
+this better than a vote that costs nothing.
+
+**Decided.** Tax rates and the use of tax revenue are changed by vote.
+
 **Proposed.** Institutions do not emerge; every society simulation that showed elections, taxes
 or roles had a scripted manager behind it. The institutions here are scripted, and the agents
 operate inside them.
 
-**Proposed.** Collective decisions use participatory budgeting: voting is spending, each agent
-votes with credits it is willing to commit, in one round, with independent written rationales
-and no discussion rounds. Independent ballots beat debate in the literature, and discussion rounds
-make group decisions worse.
-
-**Open.** What the constitution contains: which mechanics exist, and what the Governing Agent may
-decide alone versus what must go to the operator beyond role changes.
-
-**Open.** How the society prioritises work between competing operator requests, obligations,
-proposals and hobbies. Candidates are the bounty market, participatory budgeting and the
-governor; nothing is chosen.
+**Open.** What else the constitution contains, and what the Governing Agent may decide alone
+versus what must go to the operator beyond role changes and the seniority order.
 
 ## 10. Observability
 
@@ -195,10 +286,13 @@ exist, each agent's job, the credits each job cost, how many agents are active, 
 doing. Monitoring is robust and credit optimisation is deliberate, because the system runs
 swarms.
 
+**Proposed.** The dashboard shows credits committed per tranche, per job and per agent, and how
+far down the seniority ladder the day's money reached.
+
 **Proposed.** Observer Agents get fresh context on every wake, read-only access, and a concrete
 list of signals to look for rather than an open brief: repeated steps, agents unaware a task has
-already finished, fabricated outreach, persona drift. They report to the Governing Agent, not to
-the society.
+already finished, fabricated outreach, persona drift, lending rings. They report to the
+Governing Agent, not to the society.
 
 **Proposed.** Model choice is part of an agent's definition and of its wake cost. The society is
 model-agnostic by design so that different roles can run on different models and the market can
@@ -233,27 +327,33 @@ research notes.
 ## 12. Simulation plan
 
 **Decided.** The economy and institutions are simulated with stub or cheap-model agents before
-any real agent exists. The simulation is platform-independent.
+any real agent exists. The simulation is platform-independent. The daily budget period is chosen
+partly so the simulation produces many observations quickly.
 
 **Proposed.** Levers to expose, each swept against outcomes such as work completed, population
-over time, credit concentration, and cost per useful outcome:
+over time, credit concentration, loan volume, and cost per useful outcome:
 
-- money supply;
-- tax rate;
+- daily money supply;
+- income tax rate;
+- wealth tax rate and floor;
 - treasury pricing of operator requests and obligations;
-- credit expiry;
-- population cap;
-- wake-cost floor;
-- public-goods budget;
+- match ratio for discretionary proposals;
+- population cap and spawn fee curve;
+- seed balance per class;
+- per-wake ceiling;
+- public-goods tranche size;
+- reserve fund cap;
 - model mix per role.
 
 ## 13. Open questions
 
-1. How the society prioritises work. Named as the next topic.
-2. Contents of the constitution.
-3. The Governing Agent's unilateral scope.
-4. Observer scope: what they watch, how often, what is worth reporting.
-5. Hobby scope: what unfunded work may touch.
-6. The content of each personality tier. Nothing written yet.
-7. The runtime platform and the kernel it does not supply. Discussed in the implementation,
+1. Who votes on taxes, and what bounds the constitution puts on rates.
+2. Where the lobby fund comes from (dues, matching, both) and how contested cap slots are
+   allocated. Proposals in section 7.
+3. Whether a dead agent's memory is inherited by its class.
+4. The per-wake ceiling: whether to have one, and the measurement that sets it.
+5. Observer scope: what they watch, how often, what is worth reporting.
+6. Hobby scope: what unfunded work may touch.
+7. The content of each personality tier. Nothing written yet.
+8. The runtime platform and the kernel it does not supply. Discussed in the implementation,
    not here.

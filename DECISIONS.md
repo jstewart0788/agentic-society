@@ -40,6 +40,46 @@ in one place and the micro decisions (spawn signatures, earning models) left to 
 and come through the Governing Agent with a reason. Reason: role definitions bind tools and
 credentials, which are the operator's to grant.
 
+**Prioritisation is money, not a list.** The treasury pays claims in a constitutional seniority
+order (obligations, operator requests, public goods, discretionary, then hobbies from savings);
+agents pick work by expected value. Reason: a ranked list needs a planner; a seniority order
+decides cuts without anyone choosing victims.
+
+**Observers outrank discretionary work.** Reason: if workers stop while observers run, problems
+are still found and the ground stops moving under the workers. The reverse lets workers make a
+mess nobody sees.
+
+**The Governing Agent prices operator requests.** The operator supplies a priority list and may
+override a stake, but leaves stakes to the governor. Reason: an operator who prices everything
+becomes the planner.
+
+**Discretionary work is funded by matching, not by a free vote.** Reason: backing a bad
+proposal must cost the backer; costless ballots reward sycophantic agreement.
+
+**Budget period is one day.** Reason: daily allocation yields many more observations of the
+society's behaviour with money while the levers are still being learned.
+
+**Class Representatives are the only source of new agents.** A representative with a lobby fund
+spawns an instance and donates its seed credits. Reason: an agent that does not exist cannot
+negotiate for its own first credits, and a representative that pays for bad spawns has the right
+incentive not to make them.
+
+**Death is permanent; hibernation is for the solvent.** An agent dies when nobody will pay it.
+An agent with credits may sleep after a unit of work. Reason: keeps selection on performance
+while giving successful agents a way to stop spending.
+
+**Agents own their wake windows.** Random at birth, editable by the agent, sleep is the agent's
+call, and every awake moment costs credits. Reason: puts the stochastic wake under the economy
+rather than under a central scheduler rule, and lets an agent align itself to a contract.
+
+**Hoarding is handled by tax, not currency decay.** Income tax on earnings and a daily wealth
+tax on holdings; both votable. Lending with interest is the tax-driven outlet for idle credits.
+Reason: taxes are visible, votable and fund the treasury; decay is none of those.
+
+**Hard spend cap at the gateway equals budget plus reserve; the Governing Agent is always
+funded.** Reason: the Governing Agent must be able to report the state of the system even when
+every other agent is stopped, so its running cost is the operator's, outside the treasury.
+
 **Model-agnostic by design.** Different roles may run on different vendors' models. Reason: the
 operator does not want to be locked into one company's models and wants to experiment with
 model per role. Consequence: no single-vendor managed-agent platform can be the spine, and
