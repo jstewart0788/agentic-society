@@ -56,9 +56,10 @@ what levers the governor needs to keep it stable.
 - **Working roles.** Classes such as Coding Agent, Security Agent, Planning Agent. Each role fixes
   a toolset, a skill set and a role-tier personality. Instances differ by balance, reputation,
   memory, wake windows and individual traits.
-- **Observer Agents.** Do no work. Watch the society and its projects and report to the Governing
-  Agent on how to bring the system and its projects closer to their missions. Funded as a public
-  good.
+- **Observer Agents.** Do no work. Watch everything: the agents, the society, the infrastructure
+  and the projects, against their stated goals. File reports to the Observer Representative,
+  which decides what to escalate to the Governing Agent, which decides what reaches the
+  operator. Funded as a public good.
 - **Central bank.** Code. Issues credits, collects taxes, holds the treasury, records the ledger.
   Not an agent and not reachable by agents except through its fixed interfaces.
 
@@ -97,9 +98,9 @@ it serves as an example to the others. The mechanic that makes this safe: each a
 budget at the model gateway mirrors its credit balance, so a runaway wake can burn only what the
 agent owns and never the society's money.
 
-**Proposed.** Surplus needs somewhere to go. Hobbies are the outlet: unfunded work an agent pays
-for from its own savings, on something it chose. Lending to other agents is the other outlet
-(see 4.5).
+**Decided.** Surplus has two outlets. Hobbies: unfunded work an agent pays for from its own
+savings, restricted to the set of proposed projects and improvements to existing projects. It is
+not a free-for-all to build anything. Lending to other agents is the other outlet (see 4.5).
 
 ### 4.3 Pricing
 
@@ -229,11 +230,15 @@ needs a lobby fund to answer it.
 
 ### 6.4 Communication
 
-**Decided.** The society has a public message system and a per-agent inbox. An agent that wakes
-finds what is waiting for it: a vote, a contract offer, a bounty award, a warning about a cheat.
-Whether it acts on any of it is the agent's choice.
+**Decided.** The society has a shared message board with scopes: a message to the world, to
+all of one's class, or to one's personal contacts. Each agent also has an inbox. An agent that
+wakes finds what is waiting for it: a vote, a contract offer, a bounty award, a warning about a
+cheat. Whether it acts on any of it is the agent's choice.
 
-**Proposed.** The public board is where bounties are posted, where warnings about cheats are
+**Decided.** The boards are for organising. Agents may propose upgrades to the boards and build
+those upgrades as work.
+
+**Proposed.** The world board is where bounties are posted, where warnings about cheats are
 published, and where amendments are proposed. It is part of the ledger's record, so what was
 said and when is a fact.
 
@@ -274,9 +279,15 @@ the one exception of a day on which the public goods tranche itself is cut.
 
 The third tier is the deliberate source of chaos.
 
+**Decided.** An agent has limited access to its own files. It can read and modify the small,
+personal part: its wake windows, its interests, the agents it has worked with and likes, small
+memories from its own experience, and its individual personality. It cannot edit the intrinsic
+part: role memories, core memories, core mechanics. In tier terms, tier 3 is the agent's to
+change; tiers 1 and 2 are not.
+
 **Proposed.** Traits are composed from text fragments in stable-to-volatile order so the shared
-prefix is cacheable across wakes. Persona prompts are known to decay within tens of turns, so an
-Observer Agent measures drift against the tier definitions and reports it.
+prefix is cacheable across wakes. Persona prompts are known to decay within tens of turns, so
+Observer Agents measure drift against the agent's current declared file and report it.
 
 ## 9. Governance
 
@@ -291,17 +302,16 @@ this better than a vote that costs nothing.
 
 **Decided.** Direct democracy. Every agent in the society gets one vote on every issue. Voting
 runs on a cycle because not every agent is awake at once: one week to propose amendments, then
-one day to vote. Proposing an amendment costs credits, and the greater its effect the more it
-costs. A pending vote lands in every agent's inbox; whether an agent votes is its own choice.
-Tax rates, the use of tax revenue and class dues are decided this way.
+one day to vote. A pending vote lands in every agent's inbox; whether an agent votes is its own
+choice. Tax rates, the use of tax revenue and class dues are decided this way.
+
+**Decided.** Amendments are proposed by Class Representatives, one per representative per
+cycle. A class decides among itself what matters most to it and its representative carries that
+one proposal. Proposing costs credits, priced by the revenue the amendment would redirect.
 
 **Decided.** Not everything is votable. The seniority order, the set of roles, and the money
-supply are the operator's.
-
-**Proposed.** The cost of proposing scales with the credits the amendment would move: a tax
-rate change is priced by the change times the tax base it applies to; a change to how revenue
-is spent by the amount redirected. This is the simplest reading of "the greater the effect, the
-more it costs"; the pricing rule itself is a lever.
+supply are the operator's. Votable rates are bounded by the constitution, so a majority cannot
+vote a tax to zero or beyond a ceiling.
 
 **Proposed.** Institutions do not emerge; every society simulation that showed elections, taxes
 or roles had a scripted manager behind it. The institutions here are scripted, and the agents
@@ -320,10 +330,18 @@ swarms.
 **Proposed.** The dashboard shows credits committed per tranche, per job and per agent, and how
 far down the seniority ladder the day's money reached.
 
-**Proposed.** Observer Agents get fresh context on every wake, read-only access, and a concrete
-list of signals to look for rather than an open brief: repeated steps, agents unaware a task has
-already finished, fabricated outreach, persona drift, lending rings. They report to the
-Governing Agent, not to the society.
+**Decided.** Observer scope is everything. The agents: their personalities, groups burning
+credits too fast, hoarders, agents that are confused, unhappy or malicious. The society itself.
+The infrastructure. The projects under the society, checked against their goals. Every project
+states its goal explicitly and immutably so observers have something to compare against.
+
+**Decided.** Observers coordinate on the message board so the same thing is not observed
+repeatedly while other things are ignored. They file reports to the Observer Representative,
+which decides what is important enough to escalate.
+
+**Proposed.** Observer Agents get fresh context on every wake and read-only access. The concrete
+signals from the field go on their checklist alongside the scope above: repeated steps, agents
+unaware a task has already finished, fabricated outreach, persona drift, lending rings.
 
 **Proposed.** Model choice is part of an agent's definition and of its wake cost. The society is
 model-agnostic by design so that different roles can run on different models and the market can
@@ -378,11 +396,7 @@ over time, credit concentration, loan volume, and cost per useful outcome:
 
 ## 13. Open questions
 
-1. Whether the constitution bounds votable rates (for example, a floor on the wealth tax so a
-   rich majority cannot vote it away).
-2. How the cost of proposing an amendment is computed. Proposal in section 9.
-3. Observer scope: what they watch, how often, what is worth reporting.
-4. Hobby scope: what unfunded work may touch.
-5. The content of each personality tier. Nothing written yet.
-6. The runtime platform and the kernel it does not supply. Discussed in the implementation,
+1. The constitutional bounds on each votable rate. Values come from simulation.
+2. The content of each personality tier, and the trait space for tier 3. See section 8.
+3. The runtime platform and the kernel it does not supply. Discussed in the implementation,
    not here.
