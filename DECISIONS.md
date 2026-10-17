@@ -134,3 +134,26 @@ that says it is fine and is three days from broke is the signal observers exist 
 operator does not want to be locked into one company's models and wants to experiment with
 model per role. Consequence: no single-vendor managed-agent platform can be the spine, and
 per-agent cost caps have to be enforced at a gateway or in the kernel rather than by the platform.
+
+## 2026-10-17
+
+**Societal agents are decision models, not LLMs.** A fixed action set per class, a typed
+judgement model choosing among them, and short-lived LLM workers bought per work unit. Reason:
+alignment degrades with run length and context; the enumerable action set keeps the society
+from spiralling; workers hold one unit of context and are discarded.
+
+**The decision layer is an interface with three providers.** A judgement model for production,
+a constrained small model as fallback, a hand-written policy for simulation. Reason: the
+production candidate is early access with undisclosed mechanism and no published calibration;
+the simulation should not depend on any vendor.
+
+**The kernel computes lookahead and builds the state from ledger facts.** Reason: independent
+testing shows the judgement model fails when the right choice depends on predicting what is not
+in its input, and that untrusted text in its input shifts its probabilities.
+
+**Two parallel tracks: platform spikes and UI first.** Reason: the spikes replace guesses about
+the platform with numbers; the UI gives the operator a place to build the society and forces the
+schema into existence.
+
+**Design split into files by concern.** The model stays high level; agents, UI, institutions and
+infrastructure each have their own design file. Reason: the operator asked for it.

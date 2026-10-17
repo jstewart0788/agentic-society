@@ -26,8 +26,13 @@ Nothing has been built. The intended order is:
 
 | File | What it is |
 |------|------------|
-| `MODEL.md` | The society model: actors, economy, reputation, work, growth, personality, governance, observability, grounding, open questions. |
+| `MODEL.md` | The society model, high level only: actors, economy, reputation, work, growth, personality, governance, observability, grounding, open questions. |
 | `DECISIONS.md` | Dated log of decisions and the reasoning behind them. |
+| `ROADMAP.md` | The two work tracks and how they converge. |
+| `design/agents.md` | How one agent is built: the decision model, workers, skills, traits, the wake. |
+| `design/ui.md` | The operator's console, screen by screen. |
+| `design/institutions.md` | Each institution as a kernel mechanic, with its levers and their owners. |
+| `design/infrastructure.md` | The platform and kernel split, candidates, routing, isolation, the spike track. |
 
 ## Vocabulary
 

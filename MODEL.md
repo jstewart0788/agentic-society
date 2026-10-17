@@ -63,6 +63,12 @@ what levers the governor needs to keep it stable.
 - **Central bank.** Code. Issues credits, collects taxes, holds the treasury, records the ledger.
   Not an agent and not reachable by agents except through its fixed interfaces.
 
+**Decided.** A societal agent is not itself an LLM. It is a long-running decision process with a
+fixed set of actions, choosing non-deterministically among them, and it spends its credits to
+spin up short-lived LLM workers that do the cognitive work with only the context for one unit.
+Reason: LLMs drift from alignment as they run and accumulate context, so the long-running part of
+an agent's life must not be one. How this is built is in `design/agents.md`.
+
 ## 4. Economy
 
 ### 4.1 Credits
