@@ -34,7 +34,7 @@ implementation repository. Marks as in MODEL.md.
 |----------|-----------|--------|
 | Runtime platform | Amazon Bedrock AgentCore (Runtime, Memory, Identity, Policy, Observability) | All components GA; evaluated in two research rounds; untested by us |
 | Model gateway | LiteLLM proxy, self-hosted | Virtual key per agent with hard budget, fails closed; one cost feed; routes any provider |
-| Decision model | TypeSafe AI Jev | Early access; typed choice API; see `design/agents.md` for facts and failure modes |
+| Decision model | TypeSafe AI Jev | Access confirmed; typed choice API; see `design/agents.md` for facts and failure modes |
 | Decision model fallback | A small open model with constrained choice over declared options | Untested |
 | LLM workers | Per skill, per role: any provider through the gateway | Model mix is a lever |
 | Database | Postgres | Kernel state, ledger, UI |

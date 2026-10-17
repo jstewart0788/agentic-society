@@ -42,9 +42,9 @@ sources, to be re-verified against TypeSafe's own documentation before the spike
 | Choice output | picked option, probability per option in 0.01 steps, confidence; no reasoning text |
 | Options | up to 255 per choice question |
 | Controls | no temperature, seed or length setting |
-| Price | about $0.042 per million input tokens; output free; roughly $0.00008 per call |
+| Price | $0.084 per million input tokens, output free, per the vendor's API listing on 2026-10-17; third-party pages quote half that. At a 2,000-token state that is under $0.0002 per decision |
 | Latency | vendor claims 70 to 500 ms per call |
-| Hosting | proprietary, hosted only, early access; also listed on OpenRouter, Requesty and Zuplo gateways |
+| Hosting | proprietary, hosted only; access confirmed available to this experiment; also listed on OpenRouter, Requesty and Zuplo gateways |
 | Context | reported as 32K by one gateway and 64K by another; conflicting |
 
 Two independent papers on version 1.13.0 establish the design constraints that matter here:
