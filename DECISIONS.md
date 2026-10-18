@@ -157,3 +157,11 @@ schema into existence.
 
 **Design split into files by concern.** The model stays high level; agents, UI, institutions and
 infrastructure each have their own design file. Reason: the operator asked for it.
+
+## 2026-10-18
+
+**Lookahead is a snapshot of facts, never a recommendation.** The kernel appends to each option
+what the ledger would look like after it: balances, runway, stakes, counterparty history, dates.
+It never appends a score, rank, flag or composite such as an expected value. Reason: an evaluator
+handed a verdict mostly confirms it, so agents with the same facts would converge on the kernel's
+formula; the experiment needs agents to read the same facts differently, including wrongly.

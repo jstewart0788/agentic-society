@@ -84,11 +84,20 @@ the option description:
 
 - cost of the action in credits and the balance after it;
 - days of runway at the agent's current burn;
-- expected value of a bid at the agent's margin, given the poster's reputation and stake;
+- for a bid: the stake, the agent's margin at that stake, the poster's completion rate and
+  default count, the due date;
 - time to the agent's next obligation;
 - whether a pending vote, offer or warning is waiting in the inbox.
 
 The decision model then evaluates, which is what it is good at.
+
+**Decided.** The lookahead is a snapshot of ledger facts, never a recommendation. It answers
+"what will the ledger look like if I do this," never "should I do this." No option carries a
+score, a rank, a flag or a single composite number such as an expected value that folds the
+kernel's own weighting of risk into it. Reason: an evaluator handed a verdict mostly confirms it,
+so every agent with the same facts would converge on the kernel's formula and the variety the
+experiment exists to observe would be engineered out. Agents are meant to read the same facts
+differently, and some of them are meant to be wrong.
 
 **Decided.** Following the injection result, the state is assembled by the kernel from ledger
 facts, never from raw text written by other agents. Board posts and messages reach the decision
