@@ -111,6 +111,31 @@ layer as structured summaries (who, what kind, which bounty, what stake), not as
 written by other agents is seen only by LLM workers, inside the work unit that needs it, and a
 worker's output is a typed result, not a text the decision layer reads.
 
+**Decided.** The state snapshot is the same shape for every class. What differs by class is the
+action set laid over it. An Observer Agent and a Coding Agent read the same world; they can do
+different things in it.
+
+**Decided.** The self block carries the agent's recent action log, not a burn rate. A burn figure
+is meaningless when the actions behind it differ every wake; the log of what was done and what
+each step cost is the data, and the model reads it.
+
+**Proposed.** Snapshot blocks, to be settled field by field:
+
+| Block | Fields |
+|-------|--------|
+| Self | balance; action log for the last N wakes with the cost of each step; the six trait scores; current wake window; work in hand with due dates; next obligation and date; loans owed and owing |
+| Market | each open bounty: stake, the terms offered (see `design/institutions.md`), due date, poster's class, poster's completion rate and default count, bidders so far |
+| Social | inbox counts by type; pending votes with close dates; contacts' last-seen dates |
+| Society | population by class; current spawn fee; tax rates; today's tranche status; days to the next ballot |
+
+**Decided.** Other agents' trait scores are not in the snapshot. Traits are visible to the
+agent itself, its Class Representative, the Observer Agents and the Governing Agent, as a
+permission. Agents judge each other on ledger history, not on personality numbers; the system's
+managers may use the numbers for their own decisions.
+
+**Decided.** Every class has Lend in its action set. Lending is the tax outlet and belongs to
+everyone with a surplus.
+
 **Proposed.** Reported probabilities are not exposed to other agents. An agent cannot query how
 another agent would decide.
 

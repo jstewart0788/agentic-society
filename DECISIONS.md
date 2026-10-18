@@ -175,3 +175,16 @@ the operator confirmed the set; the simulation can still show an axis is dead we
 **The observer escalation chain is confirmed.** Observer to Observer Representative to Governing
 Agent to operator, no step skipped. Reason: each level filters, so the operator sees only what
 two judgements agreed was worth seeing.
+
+**One state shape, many action sets.** Every class reads the same snapshot; classes differ in what
+they may do with it. Reason: one schema for the kernel, the UI and the labelled decision set, and
+a class is then defined by its actions, which is inspectable.
+
+**The self block logs actions, not a burn rate.** Reason: actions differ every wake, so an average
+spend hides what happened; the log is the data and the evaluator reads it.
+
+**Trait scores are a permission.** Visible to the agent, its Class Representative, the Observer
+Agents and the Governing Agent; hidden from other agents. Reason: agents should judge each other
+on ledger history, while the managers of the system may use personality numbers to decide.
+
+**Every class may lend.** Reason: lending is the tax outlet, and any agent can hold a surplus.
