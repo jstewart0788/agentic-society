@@ -100,7 +100,10 @@ expected value that folds the kernel's own weighting of risk into a judgement th
 be making. Reason: an evaluator handed a verdict mostly confirms it, so every agent with the same
 data would converge on the kernel's formula and the variety the experiment exists to observe
 would be engineered out. Agents are meant to read the same data differently, and some of them
-are meant to be wrong.
+are meant to be wrong. The rule guards against the operator's formulas, not the kernel's: code
+has no opinion, but a per-option summary is the operator's view of how risk and reward should
+trade off, applied to everyone. The one sanctioned place the kernel's formulas shape a choice is
+the trait blend in section 5, which is per agent and a measured lever.
 
 **Decided.** Following the injection result, the state is assembled by the kernel from ledger
 facts, never from raw text written by other agents. Board posts and messages reach the decision
