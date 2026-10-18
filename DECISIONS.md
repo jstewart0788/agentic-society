@@ -160,8 +160,10 @@ infrastructure each have their own design file. Reason: the operator asked for i
 
 ## 2026-10-18
 
-**Lookahead is a snapshot of facts, never a recommendation.** The kernel appends to each option
-what the ledger would look like after it: balances, runway, stakes, counterparty history, dates.
-It never appends a score, rank, flag or composite such as an expected value. Reason: an evaluator
-handed a verdict mostly confirms it, so agents with the same facts would converge on the kernel's
-formula; the experiment needs agents to read the same facts differently, including wrongly.
+**Lookahead is a snapshot of data, never a recommendation.** The kernel appends to each option
+what the ledger would look like after it: balances, runway, stakes, counterparty reputation,
+dates, the agent's own trait scores. Those stats exist to influence the choice. What the kernel
+never appends is its own verdict on an option: a recommended flag, a ranking of the options, or
+a composite such as an expected value. Reason: an evaluator handed a verdict mostly confirms it,
+so agents with the same data would converge on the kernel's formula; the experiment needs agents
+to read the same data differently, including wrongly.

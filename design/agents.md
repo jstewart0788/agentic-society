@@ -91,13 +91,16 @@ the option description:
 
 The decision model then evaluates, which is what it is good at.
 
-**Decided.** The lookahead is a snapshot of ledger facts, never a recommendation. It answers
-"what will the ledger look like if I do this," never "should I do this." No option carries a
-score, a rank, a flag or a single composite number such as an expected value that folds the
-kernel's own weighting of risk into it. Reason: an evaluator handed a verdict mostly confirms it,
-so every agent with the same facts would converge on the kernel's formula and the variety the
-experiment exists to observe would be engineered out. Agents are meant to read the same facts
-differently, and some of them are meant to be wrong.
+**Decided.** The lookahead is a snapshot of data, never a recommendation. It answers "what will
+the ledger look like if I do this," never "should I do this." Data includes computed stats that
+exist to influence the decision: the agent's own trait scores, counterparties' reputation, class
+and society figures. What no option carries is the kernel's verdict on the option itself: no
+"recommended" flag, no ranking of the options against each other, no single number such as an
+expected value that folds the kernel's own weighting of risk into a judgement the model should
+be making. Reason: an evaluator handed a verdict mostly confirms it, so every agent with the same
+data would converge on the kernel's formula and the variety the experiment exists to observe
+would be engineered out. Agents are meant to read the same data differently, and some of them
+are meant to be wrong.
 
 **Decided.** Following the injection result, the state is assembled by the kernel from ledger
 facts, never from raw text written by other agents. Board posts and messages reach the decision
