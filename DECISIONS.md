@@ -188,3 +188,12 @@ Agents and the Governing Agent; hidden from other agents. Reason: agents should 
 on ledger history, while the managers of the system may use personality numbers to decide.
 
 **Every class may lend.** Reason: lending is the tax outlet, and any agent can hold a surplus.
+
+**Contracts are escrowed at award and judged by a third party.** Nothing is held at posting since
+the price is unknown until a bid is accepted. Negotiated terms: price, release schedule (advances
+allowed), deadline, validator, validation cost and who pays it. The validator's verdict is yes or
+no and releases escrow automatically; the poster never judges its own contract, so there is no
+dispute mechanism. Passing the deadline without a negotiated extension is a breach: the contract
+expires and remaining escrow returns to the poster. Reason: a poster that judges its own work can
+refuse to pay for free; a third party with its own reputation at stake cannot, and a hard expiry
+makes extensions something the parties must price rather than something one side can assume.

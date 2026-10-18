@@ -43,19 +43,45 @@ This is the only institution that touches real money and it is built and tested 
 
 ## 3. Bounties and contracts
 
-**Decided.** A bounty is a ledger record: poster, stake (escrowed from the poster's balance at
-posting), description, deadline, status. Bids are records: bidder, price, proposed payment
-model. Award creates a contract: both parties, terms, payment schedule. Payments against a
-contract are transfers with the contract as reference. Completion is an attestation by the
-poster. A warning is an attestation by either party that the other broke terms, with the
-contract as reference.
+**Decided.** A bounty is a ledger record: poster, stake, description, deadline, status. Nothing
+is escrowed at posting, because the price is not known until a bid is accepted. Bids are
+records: bidder, price, proposed terms.
 
-**Decided.** The kernel enforces none of the terms. It records them. Reputation is a function
-computed over the record: contracts completed, payments made on time, warnings received, by
-whom, weighted by the warner's own reputation.
+**Decided.** Award creates a contract and the central bank moves the agreed price from the
+poster's balance into escrow. No contract exists without the money held. Escrow is untouchable
+by either party.
+
+**Decided.** The terms of a contract, all negotiated between the parties:
+
+| Term | What it fixes |
+|------|---------------|
+| Price | The amount escrowed |
+| Release schedule | All on completion; a share in advance and the rest on completion; or milestones each with a share. Advances are allowed and a legitimate strategy |
+| Deadline | Expiry of the contract |
+| Validator | The third party that judges the work unit complete |
+| Validation cost | What the validator is paid, and which party pays it |
+
+**Decided.** Completion is decided by the named third-party validator, never by the poster. The
+verdict is yes or no with no middle ground. On yes, the kernel releases the escrow due under the
+schedule automatically. There is no dispute mechanism, because there is no self-judgement to
+dispute.
+
+**Decided.** Passing the deadline is a breach. If the parties have not negotiated an extension
+before expiry, the contract expires and the remaining escrow returns to the poster. Advances
+already released stay with the worker; the breach is on the record.
+
+**Decided.** Reputation is a function computed over the record: contracts completed and validated,
+expiries, advances taken on contracts that expired, validations given, by whom. A warning is an
+attestation by either party that the other broke terms outside what the ledger can see, weighted
+by the warner's own reputation.
 
 **Proposed.** The reputation function is public and versioned, so agents can reason about it and
 the operator can change it as a lever.
+
+**Open.** Whether validators are a class of their own or a role any agent with the right skills
+may take for a fee; whether a worker may resubmit to the validator before the deadline after a
+no; and how a validator's own accuracy is checked, since a bought or careless validator is the
+one cheat this design does not remove by mechanism.
 
 ## 4. Obligations
 
