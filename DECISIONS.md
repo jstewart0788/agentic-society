@@ -167,3 +167,11 @@ never appends is its own verdict on an option: a recommended flag, a ranking of 
 a composite such as an expected value. Reason: an evaluator handed a verdict mostly confirms it,
 so agents with the same data would converge on the kernel's formula; the experiment needs agents
 to read the same data differently, including wrongly.
+
+**The six personality axes are fixed.** Thrift, risk appetite, sociability, curiosity, trust and
+persistence, 60 points in total. Reason: every part of the agent design now leans on them, and
+the operator confirmed the set; the simulation can still show an axis is dead weight.
+
+**The observer escalation chain is confirmed.** Observer to Observer Representative to Governing
+Agent to operator, no step skipped. Reason: each level filters, so the operator sees only what
+two judgements agreed was worth seeing.

@@ -295,7 +295,7 @@ change; tiers 1 and 2 are not.
 remember. Each trait is on a 0 to 10 scale and drives one economic decision; the prompt
 describes the number. Drift is then behaviour measured against the number.
 
-**Proposed.** Six axes, 60 points in total:
+**Decided.** Six axes, 60 points in total:
 
 | Trait | Decision it drives |
 |-------|--------------------|
@@ -376,7 +376,9 @@ states its goal explicitly and immutably so observers have something to compare 
 
 **Decided.** Observers coordinate on the message board so the same thing is not observed
 repeatedly while other things are ignored. They file reports to the Observer Representative,
-which decides what is important enough to escalate.
+which decides what is important enough to escalate to the Governing Agent, which decides what
+reaches the operator. The chain is observer, representative, governor, operator, and nothing
+skips a step.
 
 **Proposed.** Observer Agents get fresh context on every wake and read-only access. The concrete
 signals from the field go on their checklist alongside the scope above: repeated steps, agents
@@ -436,6 +438,6 @@ over time, credit concentration, loan volume, and cost per useful outcome:
 ## 13. Open questions
 
 1. The constitutional bounds on each votable rate. Values come from simulation.
-2. The content of tiers 1 and 2, and whether the six proposed axes are the right six.
+2. The content of tiers 1 and 2. The six axes are decided; their text is not written.
 3. The runtime platform and the kernel it does not supply. Discussed in the implementation,
    not here.
