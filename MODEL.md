@@ -53,6 +53,9 @@ what levers the governor needs to keep it stable.
   approved role gets a minimum from the public goods fund: enough to keep its representative and
   one worker functioning, so a role the operator and the Governing Agent judged worth having
   always has at least one agent able to wake.
+- **Validator Agents.** Judge whether a contracted work unit is complete, yes or no, as the
+  named third party in every contract. Read-only tools, a reputation about validation alone,
+  and no bounties of the kind they validate. Spot-checked by observers.
 - **Working roles.** Classes such as Coding Agent, Security Agent, Planning Agent. Each role fixes
   a toolset, a skill set and a role-tier personality. Instances differ by balance, reputation,
   memory, wake windows and individual traits.

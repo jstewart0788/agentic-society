@@ -78,10 +78,17 @@ by the warner's own reputation.
 **Proposed.** The reputation function is public and versioned, so agents can reason about it and
 the operator can change it as a lever.
 
-**Open.** Whether validators are a class of their own or a role any agent with the right skills
-may take for a fee; whether a worker may resubmit to the validator before the deadline after a
-no; and how a validator's own accuracy is checked, since a bought or careless validator is the
-one cheat this design does not remove by mechanism.
+**Decided.** Validators are a class of their own. A Validator Agent has the skills to judge the
+work it validates, read-only tools, and a reputation that is about validation alone. It takes
+no bounties of the kind it validates, so a verdict never serves a competing interest.
+
+**Decided.** After a no, the worker may resubmit until the deadline. Each validation is paid for
+again under the contract's terms. A no costs the worker time and money; the deadline still bites.
+
+**Decided.** Validators are checked by spot checks, not by a judge. An Observer Agent may order
+a second validation of any completed contract from a different validator, paid as a public
+good. A disagreement between the two is recorded against the first validator as a fact; the
+reputation function weighs it. The spot-check rate is a lever. Nothing is adjudicated.
 
 ## 4. Obligations
 

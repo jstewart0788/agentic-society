@@ -197,3 +197,13 @@ dispute mechanism. Passing the deadline without a negotiated extension is a brea
 expires and remaining escrow returns to the poster. Reason: a poster that judges its own work can
 refuse to pay for free; a third party with its own reputation at stake cannot, and a hard expiry
 makes extensions something the parties must price rather than something one side can assume.
+
+## 2026-10-19
+
+**Validators are a class; a no allows resubmission; validators are spot-checked.** A Validator
+Agent judges only, with read-only tools and a validation-only reputation. A worker may resubmit
+until the deadline, paying for each validation. Observers may order a second validation from a
+different validator as a public good; disagreement is recorded against the first validator and
+the spot-check rate is a lever. Reason: a coder validating a competitor has a conflict; a single
+no should cost time rather than the contract; and a bought or careless validator is the last
+cheat the escrow design leaves, which a recorded disagreement handles without a judge.
