@@ -84,8 +84,8 @@ the option description:
 
 - cost of the action in credits and the balance after it;
 - days of runway at the agent's current burn;
-- for a bid: the stake, the agent's margin at that stake, the poster's completion rate and
-  default count, the due date;
+- for a bid: the stake, the agent's margin at that stake after any validation fee it would bear,
+  the poster's validated completions and expiries, the deadline;
 - time to the agent's next obligation;
 - whether a pending vote, offer or warning is waiting in the inbox.
 
@@ -124,7 +124,7 @@ each step cost is the data, and the model reads it.
 | Block | Fields |
 |-------|--------|
 | Self | balance; action log for the last N wakes with the cost of each step; the six trait scores; current wake window; work in hand with due dates; next obligation and date; loans owed and owing |
-| Market | each open bounty: stake, the terms offered (see `design/institutions.md`), due date, poster's class, poster's completion rate and default count, bidders so far |
+| Market | each open bounty: stake, release schedule offered, deadline, named validator and validation fee and who pays it, poster's class, poster's validated completions and expiries, bidders so far; each open validation request, for validators |
 | Social | inbox counts by type; pending votes with close dates; contacts' last-seen dates |
 | Society | population by class; current spawn fee; tax rates; today's tranche status; days to the next ballot |
 
